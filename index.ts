@@ -25,6 +25,8 @@ async function setup() {
   // Farbe -------------------+        |            |   |
   //                          V        V            V   V
   fireworks.push(new Firework(60, (p.width * 2) / 4, 75, 25));
+  fireworks.push(new Firework(80, (p.width * 2) / 4, 75, 5));
+  fireworks.push(new Firework(100, (p.width * 2) / 4, 75, 50));
 }
 
 function draw() {
