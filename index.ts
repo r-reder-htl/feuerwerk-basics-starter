@@ -24,9 +24,30 @@ async function setup() {
   // X-Position (horizontal) ----------+            |   |
   // Farbe -------------------+        |            |   |
   //                          V        V            V   V
-  fireworks.push(new Firework(60, (p.width * 2) / 4, 75, 25));
-  fireworks.push(new Firework(80, (p.width * 2) / 4, 75, 5));
-  fireworks.push(new Firework(100, (p.width * 2) / 4, 75, 50));
+  //fireworks.push(new Firework(60, (p.width * 2) / 4, 75, 25));
+  /*for (let i = 0; i < 20; i++) {
+    fireworks.push(new Firework(60, (p.width * 1) / 4, 175, 25));
+    fireworks.push(new Firework(80, (p.width * 2) / 4, 75, 5));
+    fireworks.push(new Firework(100, (p.width * 3) / 4, 50, 50));
+    await delay(1000);
+  }*/
+
+
+  for (let i = 0; i < 100; i++) {
+    const numberOfRockets = 10;
+    for (let j = 0; j < numberOfRockets; j++) {
+      fireworks.push(
+        new Firework(
+          p.random(360),
+          (p.width * j) / (numberOfRockets - 1),
+          p.random(100),
+          p.random(25)
+        )
+      );
+    }
+
+    await delay(1500);
+  }
 }
 
 function draw() {
